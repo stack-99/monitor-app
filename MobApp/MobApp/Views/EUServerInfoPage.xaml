@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobApp.Views.EUServerInfoPage"
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:MobApp.ViewModels"  
+             xmlns:model="clr-namespace:MobApp.Models"  
+             x:Name="EUServerHardwareItemsPage">
+
+    <!--
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems> -->
+    <!--
+      x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
+      https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
+    -->
+    <RefreshView x:DataType="local:EUServerInfoViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <StackLayout Padding="10">
+            <Label Text="{Binding ServerHardwareInfo.SSAlive, StringFormat='Session Server Alive: {0}'}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                         />
+            <Label Text="{Binding ServerHardwareInfo.LSAlive, StringFormat='Login Server Alive: {0}'}" 
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}" />
+            <Label Text="{Binding ServerHardwareInfo.LSMemory, StringFormat='Login Server Memory: {0}'}"
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}" />
+            <Label Text="{Binding ServerHardwareInfo.GSAlive, StringFormat='Game Server Alive: {0}'}"
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}" />
+            <Label Text="{Binding ServerHardwareInfo.GSMemory, StringFormat='Game Server Memory: {0}'}"
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}" />
+            <Label Text="{Binding ServerHardwareInfo.Free, StringFormat='Free disk space: {0}'}"
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}" />
+            <Label Text="{Binding ServerHardwareInfo.TotalUsed, StringFormat='Total used space: {0}'}"
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}" />
+            <Entry/>
+            <Button Text="Refresh" Clicked="refreshEUHardwareInfo"></Button>
+        </StackLayout>
+    </RefreshView>
+
+   
+</ContentPage>

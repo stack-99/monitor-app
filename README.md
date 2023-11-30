@@ -2,7 +2,7 @@
 Mobile application Xamarin (2021)
 
 # Learning and using Xamarin for the first time
-- Mobile app to help control and monitor the backend system
+- Mobile app to help control and monitor the backend system (WIP)
   
 # Prerequisites
 - Download Visual Studio and Xamarin packages

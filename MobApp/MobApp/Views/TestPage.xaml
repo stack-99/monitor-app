@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MobApp.Views.TestPage">
+    <ListView x:Name="serversListView" ItemsSource="{Binding ServersInfo}"
+            HasUnevenRows="True"
+            BackgroundColor="#ecf0f1"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+        <ListView.ItemTemplate>
+
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Margin="6,4,6,4"
+                                BackgroundColor="White">
+                        <Label Text="{Binding Description}" 
+                            Margin = "8" 
+                            FontAttributes="Bold" 
+                            FontSize="Medium">
+                        </Label>
+                        <Label Text="{Binding Count, StringFormat='Sessions Online: {0}'}"
+                            Margin="8,2,8,4"
+                            FontSize="Small">
+                        </Label>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+
+        </ListView.ItemTemplate>
+    </ListView>
+    <Entry/>
+        <Button Text="Refresh status" Clicked="refreshStatus"></Button>
+        <Button Text="Restart EU GS Server" Clicked="restartEUGSServer"></Button>
+        <Button Text="Restart LS Server" Clicked="restartLSServer"></Button>
+        <Entry/>
+
+</StackLayout>

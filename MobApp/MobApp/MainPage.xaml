@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:common="clr-namespace:MobApp.Views;assembly=MobApp"
+             x:Class="MobApp.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+            <Label Text="Monitor" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Server Info" FontSize="Title" Padding="30,10,30,10"/>
+
+        <StackLayout Padding="0,0,0,20">
+            <common:TestPage>
+            </common:TestPage>
+        </StackLayout>
+
+        
+        <Label FontSize="16" Padding="30,24,30,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="Learn more at "/>
+                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </StackLayout>
+
+</ContentPage>
